@@ -32,16 +32,37 @@ class HandsetController extends ApiController
      */
     public function registerHandset(Request $request)
     {
-        $this->validate($request, Handset::$rules);
+        $rules = [
+            'device_type' => 'required',
+            'device_id' => 'required',
+        ];
 
-        if(empty($request->device_id)) {
-            $data = $this->handset->create($request->all());
-        } else {
-            $data = $this->handset->where('device_id', $request->device_id)->first();
-            $data->update($request->all());
+        $this->validate($request, $rules);
 
+        $handset = $this->handset->where('device_id', $request->device_id)->first();
+
+        if(empty($handset)) {
+            $handset = $request->all();
+            $data = $this->handset->create($handset);
+            return $this->respondWithSuccess($data);
         }
+
+        $handset->update($request->all());
+
+        $data = [
+            'device_type' => $handset->device_type,
+            'device_id' => $handset->device_id,
+            'push_token ' => (string) $handset->push_token,
+            'access_token ' => $handset->access_token,
+        ];
+
         return $this->respondWithSuccess($data);
+
     }
+
+
+
+
+
 
 }

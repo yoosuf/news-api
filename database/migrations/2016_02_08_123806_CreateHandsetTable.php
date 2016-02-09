@@ -15,6 +15,7 @@ class CreateHandsetTable extends Migration
             $table->string('device_type');
             $table->string('device_id')->unique()->nullable();
             $table->string('push_token')->nullable();
+            $table->string('access_token')->unique();
             $table->timestamps();
         });
     }

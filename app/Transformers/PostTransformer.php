@@ -22,7 +22,7 @@ class PostTransformer extends TransformerAbstract
         return [
             'id'           => (int) $post->ID,
             'title' => $post->post_title,
-            'content'  => $post->post_content,
+            'description'  => $post->post_content,
             'excerpt' =>$post->post_excerpt,
             'thumbnail' => $post->image,
             'links' => [

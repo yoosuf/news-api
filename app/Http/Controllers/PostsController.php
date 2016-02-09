@@ -47,10 +47,14 @@ class PostsController extends ApiController
         return $this->respond($data);
     }
 
+    /**
+     * @param $id
+     * @param Manager $fractal
+     * @param PostTransformer $postTransformer
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function show($id, Manager $fractal, PostTransformer $postTransformer)
     {
-
-
         $post = $this->post->find($id);
         if(empty($post))
             return $this->respondNotFound();
@@ -59,6 +63,29 @@ class PostsController extends ApiController
         $data = $fractal->createData($item)->toArray();
 
         return $this->respondWithSuccess($data);
+
+    }
+
+
+    public function store(Request $request)
+    {
+        $rules = [
+            'title' => 'required',
+            'description'  => 'required',
+            'category' => 'required',
+        ];
+
+        $this->validate($request, $rules);
+
+        $data = [
+            'post_title' => $request->title,
+            'post_content' => $request->description,
+            'main_category' => $request->category,
+        ];
+
+        $this->post->create($data);
+
+        return $this->respondWithSuccess("The post has been added");
 
     }
 

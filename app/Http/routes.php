@@ -11,20 +11,17 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
-});
+$app->get('/', 'DocsController@index');
 
 
-$app->group(['prefix' => 'v1'], function () use ($app) {
+$app->group(['prefix' => 'v1', 'middleware' => 'app'], function () use ($app) {
 
     $app->get('/categories', 'App\Http\Controllers\CategoriesController@index');
     $app->get('/categories/{id}', 'App\Http\Controllers\CategoriesController@show');
     $app->get('/posts/popular', 'App\Http\Controllers\PostsController@index');
     $app->get('/posts/{id}', 'App\Http\Controllers\PostsController@show');
-
     $app->post('/handset/register', 'App\Http\Controllers\HandsetController@registerHandset');
-
+    $app->post('/posts/new', 'App\Http\Controllers\PostsController@store');
 });
 
 
