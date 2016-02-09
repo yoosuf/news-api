@@ -1,13 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yoosuf
- * Date: 08/02/2016
- * Time: 23:53
- */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\v1;
 
+use App\Http\Controllers\ApiController;
 
 use App\Handset;
 use Dingo\Api\Exception\StoreResourceFailedException;
@@ -63,7 +58,7 @@ class HandsetController extends ApiController
             'access_token ' => $handset->access_token,
         ];
 
-        return $this->respondWithSuccess($data);
+        return ["data" => $data];
 
     }
 

@@ -1,10 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Handset;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+namespace App\Http\Controllers\v1;
+use App\Http\Controllers\ApiController;
 
 class DocsController extends ApiController
 {
@@ -20,7 +17,8 @@ class DocsController extends ApiController
             'posts_by_id' => '/posts/{id}',
         ];
 
-        return $this->respond($data);
+
+	return $this->response->array($data);
     }
 
 }

@@ -1,27 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yoosuf
- * Date: 08/02/2016
- * Time: 18:48
- */
+namespace App\Http\Controllers\v1;
 
-namespace App\Http\Controllers;
-
+use App\Http\Controllers\ApiController;
 use App\Transformers\PostTransformer;
 use Corcel\Post;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
-use League\Fractal\Manager;
-use League\Fractal\Resource\Collection;
-use League\Fractal\Resource\Item;
 
 class PostsController extends ApiController
 {
-
-
     protected $post;
 
+    /**
+     * PostsController constructor.
+     * @param Post $post
+     */
     public function __construct(Post $post)
     {
 
@@ -30,20 +23,18 @@ class PostsController extends ApiController
     }
 
     /**
-     * @param Manager $fractal
      * @param PostTransformer $postTransformer
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(PostTransformer $postTransformer)
     {
 //        stats_views
-        $posts = $this->post->get();
-        return $this->collection($posts, $postTransformer);
+        $posts = $this->post->type('post')->published()->paginate(10);
+        return $this->response->paginator($posts, $postTransformer);
     }
 
     /**
      * @param $id
-     * @param Manager $fractal
      * @param PostTransformer $postTransformer
      * @return \Illuminate\Http\JsonResponse
      */
@@ -57,6 +48,10 @@ class PostsController extends ApiController
     }
 
 
+    /**
+     * @param Request $request
+     * @return \Dingo\Api\Http\Response
+     */
     public function store(Request $request)
     {
         $rules = [

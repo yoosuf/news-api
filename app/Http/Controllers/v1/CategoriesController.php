@@ -1,6 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\v1;
+
+use App\Http\Controllers\ApiController;
+
 use App\Transformers\CategoryTransformer;
 use Illuminate\Http\Request;
 use League\Fractal\Manager;

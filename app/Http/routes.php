@@ -15,28 +15,13 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
 
-    $api->get('/', 'App\Http\Controllers\DocsController@index');
-
-
-    $api->post('/handset/register', 'App\Http\Controllers\HandsetController@registerHandset');
-    $api->get('/categories/', 'App\Http\Controllers\CategoriesController@index');
-    $api->get('/categories/{id}', 'App\Http\Controllers\CategoriesController@show');
-    $api->get('/posts/popular', 'App\Http\Controllers\PostsController@index');
-    $api->get('/posts/{id}', 'App\Http\Controllers\PostsController@show');
-    $api->post('/posts/new', 'App\Http\Controllers\PostsController@store');
+    $api->get('/', 'App\Http\Controllers\v1\DocsController@index');
+    $api->post('/handset/register', 'App\Http\Controllers\v1\HandsetController@registerHandset');
+    $api->get('/categories/', 'App\Http\Controllers\v1\CategoriesController@index');
+    $api->get('/categories/{id}', 'App\Http\Controllers\v1\CategoriesController@show');
+    $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@index');
+    $api->get('/posts/{id}', 'App\Http\Controllers\v1\PostsController@show');
+    $api->post('/posts/new', 'App\Http\Controllers\v1\PostsController@store');
 });
 
-
-
-//
-//
-//$app->group(['prefix' => 'v1'], function () use ($app) {
-//
-//    $app->get('/categories', 'App\Http\Controllers\CategoriesController@index');
-//    $app->get('/categories/{id}', 'App\Http\Controllers\CategoriesController@show');
-//    $app->get('/posts/popular', 'App\Http\Controllers\PostsController@index');
-//    $app->get('/posts/{id}', 'App\Http\Controllers\PostsController@show');
-//    $app->post('/handset/register', 'App\Http\Controllers\HandsetController@registerHandset');
-//    $app->post('/posts/new', 'App\Http\Controllers\PostsController@store');
-//});
-//
+$app->get('/', 'v1\DocsController@index');
