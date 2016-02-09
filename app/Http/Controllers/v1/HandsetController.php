@@ -46,12 +46,14 @@ class HandsetController extends ApiController
         if(empty($handset)) {
             $handset = $request->all();
             $data = $this->handset->create($handset);
-            return $this->respondWithSuccess($data);
+
+            return ["data" => $data];
         }
 
         $handset->update($request->all());
 
         $data = [
+            'user_id' => (integer) $handset->user_id,
             'device_type' => $handset->device_type,
             'device_id' => $handset->device_id,
             'push_token ' => (string) $handset->push_token,

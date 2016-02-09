@@ -15,8 +15,10 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
 
-    $api->get('/', 'App\Http\Controllers\v1\DocsController@index');
+
     $api->post('/handset/register', 'App\Http\Controllers\v1\HandsetController@registerHandset');
+    $api->post('/user/register', 'App\Http\Controllers\v1\AuthController@createAppUser');
+
     $api->get('/categories/', 'App\Http\Controllers\v1\CategoriesController@index');
     $api->get('/categories/{id}', 'App\Http\Controllers\v1\CategoriesController@show');
     $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@index');
