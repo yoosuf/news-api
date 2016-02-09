@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as IlluminateResponse;
+use Dingo\Api\Routing\Helpers;
 
 
 class ApiController extends Controller {
+
+    use Helpers;
 
     protected $statusCode = IlluminateResponse::HTTP_OK;
 

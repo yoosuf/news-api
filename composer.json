@@ -15,7 +15,9 @@
         "wn/lumen-generators": "^1.1",
         "appkr/api": " 0.1.*",
         "facebook/php-sdk-v4": "^5.1",
-        "guzzlehttp/guzzle": "^6.1"
+        "guzzlehttp/guzzle": "^6.1",
+        "laravel/socialite": "^2.0",
+        "dingo/api": "1.0.x@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/Http/routes.php" line="17" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="167cec0a-60e9-4d1d-bab5-1f49dd8a661e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/AppMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_02_09_123806_CreateAppUserTable.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/RESTActions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/TasksController.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Handset.php" afterPath="$PROJECT_DIR$/app/Handset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Events/Event.php" afterPath="$PROJECT_DIR$/app/Events/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HandsetController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HandsetController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
@@ -15,7 +20,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/app.php" afterPath="$PROJECT_DIR$/bootstrap/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_08_123806_CreateHandsetTable.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_08_123806_CreateHandsetTable.php" />
     </list>
     <ignored path="news.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +40,112 @@
     <favorites_list name="news" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CategoriesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.117647">
+              <caret line="56" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="57" selection-end-column="60" />
+              <folding>
+                <element signature="e#39#80#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HandsetController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HandsetController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.970589">
+              <caret line="45" column="9" selection-start-line="41" selection-start-column="7" selection-end-line="45" selection-end-column="9" />
+              <folding>
+                <element signature="e#124#140#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.617647">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#95#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.617647">
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="19" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helpers.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Routing/Helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-35.558823">
+              <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.71719456">
+              <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+              <folding>
+                <element signature="e#123#160#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.352941">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#388#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DocsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DocsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.4705882">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="30" />
+              <folding>
+                <element signature="e#40#56#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,27 +160,31 @@
         <option value="$PROJECT_DIR$/app/Transformers/ProjectTransformer.php" />
         <option value="$PROJECT_DIR$/app/Transformers/NoteTransformer.php" />
         <option value="$PROJECT_DIR$/storage/logs/lumen.log" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" />
         <option value="$PROJECT_DIR$/app/Transformers/ArticleTransformer.php" />
         <option value="$PROJECT_DIR$/app/Transformers/CategoryTransformer.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/database/migrations/CreateHandsetTable.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DocsController.php" />
         <option value="$PROJECT_DIR$/resources/views/errors/404.blade.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/AppMiddlewhere.php" />
-        <option value="$PROJECT_DIR$/bootstrap/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/AppMiddleware.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Transformers/PostTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_08_123806_CreateHandsetTable.php" />
         <option value="$PROJECT_DIR$/app/Handset.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_08_123806_CreateAppUserTable.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_09_123806_CreateAppUserTable.php" />
+        <option value="$PROJECT_DIR$/app/Transformers/PostTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/app/Events/Event.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HandsetController.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/bootstrap/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" />
       </list>
     </option>
   </component>
@@ -215,6 +328,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -303,6 +430,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yoosuf\Desktop\Git\news\database\migrations" />
       <recent name="C:\Users\yoosuf\Desktop\Git\news" />
       <recent name="C:\Users\yoosuf\Desktop\Git\news\app" />
     </key>
@@ -352,12 +480,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16302083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16302083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -368,7 +497,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -391,13 +519,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/jgrossi/corcel/src/TermTaxonomyBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jgrossi/corcel/src/UserBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -497,18 +618,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/jgrossi/corcel/models/Taxonomy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1979638">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -530,6 +644,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16968326">
           <caret line="6" column="14" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -548,49 +663,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4355204">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8020362">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5588235">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Transformers/CategoryTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36764705">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="e#36#75#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.027233116">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Task.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4524887">
           <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -606,32 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08417509">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28280544">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5192308">
-          <caret line="53" column="89" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="89" />
-          <folding>
-            <element signature="e#39#80#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TasksController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1979638">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -657,25 +708,7 @@
         <state vertical-scroll-proportion="0.1979638">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
-            <element signature="e#121#133#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41890314">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4061086">
-          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#121#133#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -701,7 +734,7 @@
         <state vertical-scroll-proportion="0.4061086">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding>
-            <element signature="e#34#48#0#PHP" expanded="true" />
+            <element signature="e#34#48#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,52 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36764705">
-          <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DocsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08484163">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RESTActions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5294118">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="28" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Transformers/PostTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5214932">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <element signature="e#35#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54751134">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="e#124#163#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Handset.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7957993">
@@ -778,22 +765,174 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_08_123806_CreateHandsetTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42420813">
+          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52262443">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_09_123806_CreateAppUserTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33936653">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.352941">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Transformers/CategoryTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.705882">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="e#36#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Transformers/PostTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <element signature="e#35#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.588236">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Routing/Helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-35.558823">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DocsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4705882">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="30" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.352941">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#388#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.617647">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.617647">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Events/Event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28280544">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9066511">
+          <caret line="111" column="66" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Manager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34615386">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.117647">
+          <caret line="56" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="57" selection-end-column="60" />
+          <folding>
+            <element signature="e#39#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HandsetController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54751134">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state vertical-scroll-proportion="-13.970589">
+          <caret line="45" column="9" selection-start-line="41" selection-start-column="7" selection-end-line="45" selection-end-column="9" />
           <folding>
             <element signature="e#124#140#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_08_123806_CreateHandsetTable.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48076922">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.71719456">
+          <caret line="81" column="40" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
           <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
+            <element signature="e#123#160#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

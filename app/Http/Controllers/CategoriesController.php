@@ -4,12 +4,11 @@ namespace App\Http\Controllers;
 use App\Transformers\CategoryTransformer;
 use Illuminate\Http\Request;
 use League\Fractal\Manager;
-use League\Fractal\Resource\Collection;
-use League\Fractal\Resource\Item;
 use Taxonomy;
 
 class CategoriesController extends ApiController
 {
+
 
     private $fractal;
     private $request;
@@ -36,12 +35,12 @@ class CategoriesController extends ApiController
      * @param CategoryTransformer $categoryTransformer
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Manager $fractal, CategoryTransformer $categoryTransformer)
+    public function index(CategoryTransformer $categoryTransformer)
     {
         $categories = $this->taxonomy->category()->get();
-        $collection = new Collection($categories, $categoryTransformer);
-        $data = $fractal->createData($collection)->toArray();
-        return $this->respond($data);
+
+        return $this->collection($categories, $categoryTransformer);
+
     }
 
 
@@ -49,17 +48,14 @@ class CategoriesController extends ApiController
      * @param $id
      * @param Manager $fractal
      * @param CategoryTransformer $categoryTransformer
-     * @return \Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function show($id, Manager $fractal, CategoryTransformer $categoryTransformer)
+    public function show($id,  CategoryTransformer $categoryTransformer)
     {
         $category = $this->taxonomy->category()->where('term_id', $id)->first();
         if(empty($category))
-            return $this->respondNotFound();
+            return $this->response->errorNotFound();
 
-        $item = new Item($category, $categoryTransformer);
-        $data = $fractal->createData($item)->toArray();
+        return $this->item($category, $categoryTransformer);
 
-        return $this->respondWithSuccess($data);
     }
 }

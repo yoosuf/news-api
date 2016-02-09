@@ -60,13 +60,11 @@ $app->singleton(
 */
 
  $app->middleware([
-    App\Http\Middleware\ExampleMiddleware::class
+
  ]);
 
  $app->routeMiddleware([
      'auth' => App\Http\Middleware\Authenticate::class,
-     'app' => App\Http\Middleware\AppMiddleware::class,
-
  ]);
 
 /*
@@ -83,7 +81,8 @@ $app->singleton(
  $app->register(App\Providers\AppServiceProvider::class);
  $app->register(App\Providers\AuthServiceProvider::class);
  $app->register(App\Providers\EventServiceProvider::class);
-$app->register(Appkr\Api\ApiServiceProvider::class);
+ $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
@@ -98,5 +97,35 @@ $app->register(Appkr\Api\ApiServiceProvider::class);
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../app/Http/routes.php';
 });
+
+
+$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+ $fractal = new League\Fractal\Manager;
+
+ $fractal->setSerializer(new League\Fractal\Serializer\JsonApiSerializer);
+
+ return new Dingo\Api\Transformer\Adapter\Fractal($fractal);
+});
+
+
+
+$app['Dingo\Api\Http\RateLimit\Handler']->extend(function ($app) {
+ return new Dingo\Api\Http\RateLimit\Throttle\Authenticated;
+});
+
+$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+ return new Dingo\Api\Transformer\Adapter\Fractal(new League\Fractal\Manager, 'include', ',');
+});
+
+$app['Dingo\Api\Exception\Handler']->setErrorFormat([
+    'error' => [
+        'message' => ':message',
+        'errors' => ':errors',
+        'code' => ':code',
+        'status_code' => ':status_code',
+        'debug' => ':debug'
+    ]
+]);
+
 
 return $app;

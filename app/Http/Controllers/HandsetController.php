@@ -10,8 +10,9 @@ namespace App\Http\Controllers;
 
 
 use App\Handset;
+use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+
 
 class HandsetController extends ApiController
 {
@@ -37,7 +38,13 @@ class HandsetController extends ApiController
             'device_id' => 'required',
         ];
 
-        $this->validate($request, $rules);
+
+        $validator = app('validator')->make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            throw new StoreResourceFailedException('Could not add the device.', $validator->errors());
+        }
+
 
         $handset = $this->handset->where('device_id', $request->device_id)->first();
 

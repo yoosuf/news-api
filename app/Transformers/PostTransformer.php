@@ -2,9 +2,7 @@
 
 namespace App\Transformers;
 use Corcel\Post;
-use League\Fractal\Resource\Collection;
 use League\Fractal\TransformerAbstract;
-use Category;
 
 class PostTransformer extends TransformerAbstract
 {

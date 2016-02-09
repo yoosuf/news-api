@@ -8,12 +8,9 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Http\Controllers\ApiController;
-use App\Transformers\CategoryTransformer;
 use App\Transformers\PostTransformer;
-use Category;
 use Corcel\Post;
+use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
@@ -37,14 +34,11 @@ class PostsController extends ApiController
      * @param PostTransformer $postTransformer
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Manager $fractal, PostTransformer $postTransformer)
+    public function index(PostTransformer $postTransformer)
     {
-
 //        stats_views
         $posts = $this->post->get();
-        $collection = new Collection($posts, $postTransformer);
-        $data = $fractal->createData($collection)->toArray();
-        return $this->respond($data);
+        return $this->collection($posts, $postTransformer);
     }
 
     /**
@@ -53,17 +47,13 @@ class PostsController extends ApiController
      * @param PostTransformer $postTransformer
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id, Manager $fractal, PostTransformer $postTransformer)
+    public function show($id, PostTransformer $postTransformer)
     {
         $post = $this->post->find($id);
         if(empty($post))
-            return $this->respondNotFound();
+            return $this->response->errorNotFound();
 
-        $item = new Item($post, $postTransformer);
-        $data = $fractal->createData($item)->toArray();
-
-        return $this->respondWithSuccess($data);
-
+        return $this->item($post, $postTransformer);
     }
 
 
@@ -75,7 +65,11 @@ class PostsController extends ApiController
             'category' => 'required',
         ];
 
-        $this->validate($request, $rules);
+        $validator = app('validator')->make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            throw new StoreResourceFailedException('Could not add the news.', $validator->errors());
+        }
 
         $data = [
             'post_title' => $request->title,
@@ -85,7 +79,7 @@ class PostsController extends ApiController
 
         $this->post->create($data);
 
-        return $this->respondWithSuccess("The post has been added");
+        return $this->response->created();
 
     }
 
