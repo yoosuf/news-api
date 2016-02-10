@@ -13,12 +13,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
-//        $this->app->register('App\Serializers\CustomSerializer');
-
-
-
-
         if ($this->app->environment() == 'local') {
             $this->app->register('Wn\Generators\CommandsServiceProvider');
         }

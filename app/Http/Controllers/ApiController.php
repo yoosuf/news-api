@@ -20,9 +20,7 @@ class ApiController extends Controller {
      */
     public function respondWithSuccess($data)
     {
-        return $this->respond([
-            'data' => $data,
-        ]);
+        return $this->respond($data);
     }
 
 

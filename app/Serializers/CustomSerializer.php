@@ -7,7 +7,10 @@
  */
 
 namespace App\Serializers;
+
+use Closure;
 use League\Fractal\Serializer\ArraySerializer;
+use Illuminate\Contracts\Pagination\Paginator;
 
 class CustomSerializer  extends ArraySerializer
 {
@@ -33,4 +36,7 @@ class CustomSerializer  extends ArraySerializer
     {
         return ($resourceKey && $resourceKey !== 'data') ? array($resourceKey => $data) : $data;
     }
+
+
+
 }

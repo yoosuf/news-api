@@ -13,7 +13,7 @@
 
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', function ($api) {
+$api->version('v1', ['protected' => true], function ($api) {
 
 
     $api->post('/handset/register', 'App\Http\Controllers\v1\HandsetController@registerHandset');
@@ -21,9 +21,16 @@ $api->version('v1', function ($api) {
 
     $api->get('/categories/', 'App\Http\Controllers\v1\CategoriesController@index');
     $api->get('/categories/{id}', 'App\Http\Controllers\v1\CategoriesController@show');
-    $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@index');
+    $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@getPopular');
+
     $api->get('/posts/{id}', 'App\Http\Controllers\v1\PostsController@show');
     $api->post('/posts/new', 'App\Http\Controllers\v1\PostsController@store');
 });
 
 $app->get('/', 'v1\DocsController@index');
+
+
+$app->get('/users/', function() {
+
+    return User::get();
+});
