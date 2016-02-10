@@ -6,8 +6,7 @@ use App\Transformers\PostTransformer;
 use Corcel\Post;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
-use League\Fractal\Pagination\Cursor;
-use League\Fractal\Resource\Collection;
+
 
 class PostsController extends ApiController
 {
@@ -30,19 +29,15 @@ class PostsController extends ApiController
      */
     public function getPopular(PostTransformer $postTransformer, Request $request)
     {
-
-//        query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC');
-//        if (have_posts()) : while (have_posts()) : the_post();
-//        endwhile; endif;
-//        wp_reset_query();
-
-        $posts = $this->post->type('post')->published()->hasMeta('post_views_count')->orderBy('post_date', 'DESC')->paginate(10);
+        $posts = $this->post->type('post')
+            ->join('postmeta', 'posts.id', '=', 'postmeta.post_id')
+            ->where('post_type', 'post')
+            ->where('post_status','publish')
+            ->where('meta_key', 'post_views_count')
+            ->orderBy('meta_value', 'DESC')
+            ->paginate(10);
 
         return $this->response->paginator( $posts , $postTransformer);
-
-
-
-
     }
 
 

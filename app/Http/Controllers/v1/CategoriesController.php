@@ -54,6 +54,17 @@ class CategoriesController extends ApiController
      */
     public function show($id,  CategoryTransformer $categoryTransformer)
     {
+
+//        $category = $this->taxonomy->category()
+//            ->with('posts')
+//            ->where('term_id', $id)
+////            ->orderBy('post_date', 'DESC')
+//            ->first();
+//
+//        return $category;
+
+
+
         $category = $this->taxonomy->category()->with('posts')->where('term_id', $id)->first();
         if(empty($category))
             return $this->response->errorNotFound();
