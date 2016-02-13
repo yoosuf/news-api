@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\AppUser;
+use App\Models\AppUser;
 use App\Http\Controllers\ApiController;
-use App\SocialProvider;
+use App\Models\SocialProvider;
 use Illuminate\Http\Request;
 use Dingo\Api\Exception\StoreResourceFailedException;
-use Illuminate\Support\Facades\Log;
 
 class AuthController extends ApiController
 {

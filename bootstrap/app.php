@@ -102,12 +102,12 @@ $app['Dingo\Api\Http\RateLimit\Handler']->extend(function ($app) {
  return new Dingo\Api\Http\RateLimit\Throttle\Authenticated;
 });
 
-$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
- $fractal = new League\Fractal\Manager;
- $fractal->setSerializer(new \App\Serializers\CustomSerializer());
-
- return new Dingo\Api\Transformer\Adapter\Fractal($fractal, 'include', ',');
-});
+//$app['Dingo\Api\Transformer\Factory']->setAdapter(function ($app) {
+// $fractal = new League\Fractal\Manager;
+// $fractal->setSerializer(new \App\Serializers\CustomSerializer());
+//
+// return new Dingo\Api\Transformer\Adapter\Fractal($fractal, 'include', ',');
+//});
 
 $app['Dingo\Api\Exception\Handler']->setErrorFormat([
     'error' => [

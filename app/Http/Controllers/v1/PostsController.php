@@ -27,19 +27,18 @@ class PostsController extends ApiController
      * @param PostTransformer $postTransformer
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getPopular(PostTransformer $postTransformer, Request $request)
+    public function getPopularPosts(PostTransformer $postTransformer)
     {
         $posts = $this->post->type('post')
             ->join('postmeta', 'posts.id', '=', 'postmeta.post_id')
             ->where('post_type', 'post')
-            ->where('post_status','publish')
+            ->where('post_status', 'publish')
             ->where('meta_key', 'post_views_count')
             ->orderBy('meta_value', 'DESC')
             ->paginate(10);
 
-        return $this->response->paginator( $posts , $postTransformer);
+        return $this->response->paginator($posts, $postTransformer);
     }
-
 
 
     /**
@@ -47,12 +46,9 @@ class PostsController extends ApiController
      * @param PostTransformer $postTransformer
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show($id, PostTransformer $postTransformer)
+    public function getPostById($id, PostTransformer $postTransformer)
     {
         $post = $this->post->find($id);
-        if(empty($post))
-            return $this->response->errorNotFound();
-
         return $this->item($post, $postTransformer);
     }
 
@@ -65,7 +61,7 @@ class PostsController extends ApiController
     {
         $rules = [
             'title' => 'required',
-            'description'  => 'required',
+            'description' => 'required',
             'category' => 'required',
         ];
 
@@ -85,6 +81,16 @@ class PostsController extends ApiController
 
         return $this->response->created();
 
+    }
+
+
+    /**
+     * @param $post
+     */
+    private function updatePostShowCount($post)
+    {
+        $post->meta->post_views_count = ++$post->meta->post_views_count;
+        $post->save();
     }
 
 }

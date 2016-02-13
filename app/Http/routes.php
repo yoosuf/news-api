@@ -19,18 +19,13 @@ $api->version('v1', ['protected' => true], function ($api) {
     $api->post('/handset/register', 'App\Http\Controllers\v1\HandsetController@registerHandset');
     $api->post('/user/register', 'App\Http\Controllers\v1\AuthController@createAppUser');
 
-    $api->get('/categories/', 'App\Http\Controllers\v1\CategoriesController@index');
-    $api->get('/categories/{id}', 'App\Http\Controllers\v1\CategoriesController@show');
-    $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@getPopular');
+    $api->get('/categories/', 'App\Http\Controllers\v1\CategoriesController@getAllCategories');
+    $api->get('/categories/{id}', 'App\Http\Controllers\v1\CategoriesController@getCategoryById');
+    $api->get('/categories/{id}/posts', 'App\Http\Controllers\v1\CategoriesController@getCategoryWithPosts');
+    $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@getPopularPosts');
 
-    $api->get('/posts/{id}', 'App\Http\Controllers\v1\PostsController@show');
+    $api->get('/posts/{id}', 'App\Http\Controllers\v1\PostsController@getPostById');
     $api->post('/posts/new', 'App\Http\Controllers\v1\PostsController@store');
 });
 
 $app->get('/', 'v1\DocsController@index');
-
-
-$app->get('/users/', function() {
-
-    return User::get();
-});

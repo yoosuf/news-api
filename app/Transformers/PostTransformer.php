@@ -29,6 +29,7 @@ class PostTransformer extends TransformerAbstract
                 'rel' => 'self',
                 'uri' => $post->guid,
             ],
+            'post_views' => (int) $post->meta->post_views_count ,
             'comment_count' => $post->comment_count,
             'created_at' => $post->post_date,
             'updated_at' => $post->post_modified,

@@ -25,7 +25,7 @@ class CategoryTransformer extends TransformerAbstract
             'id'           => $taxonomy->term_id,
             'name'         => $taxonomy->term->name,
             'description'  => $taxonomy->description,
-            'count'         => $taxonomy->count,
+            'count'         => $taxonomy->count
         ];
     }
 
