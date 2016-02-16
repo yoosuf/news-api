@@ -28,7 +28,9 @@ class PostTransformer extends TransformerAbstract
             return [
                 'id' => (int)$post->ID,
                 'title' => $post->post_title,
-                'description' => "<h1>".$post->post_title."</h1>".$post->post_content,
+
+                'description' => "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://api.liveat8.lk/css/app.css?update=today\"><div itemscope itemtype=\"http://schema.org/Periodical\"><img src='".$post->image ."'/>"."<div class=\"post\"><h1  itemprop=\"name\">".$post->post_title."</h1><ul class=\"post-meta\"><li><time datetime=\"2010-07-03\" itemprop=\"datePublished\">".$post->post_date."</time></li></ul><div itemprop=\"description\">".$post->post_content . "</div></div><footer>
+© ".date("Y")." ඊ.ඒ.පී. ගුවන් විදුලි සමාගම . සියලුම හිමිකම් ඇවිරිණි.</footer></div>",
                 'excerpt' => $post->post_excerpt,
                 'thumbnail' => $post->image,
                 'links' => [
