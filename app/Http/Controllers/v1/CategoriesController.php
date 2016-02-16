@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\Http\Controllers\ApiController;
 
-use App\Transformers\CategoryTransformer;
-use App\Transformers\PostTransformer;
+use App\Transformers\v1\CategoryTransformer;
+use App\Transformers\v1\PostTransformer;
 use Corcel\Post;
 use Illuminate\Http\Request;
 use League\Fractal\Manager;
@@ -71,15 +70,10 @@ class CategoriesController extends ApiController
     public function getCategoryWithPosts($id, PostTransformer $postTransformer)
     {
         $category = $this->taxonomy->category()->whereTermId($id)->first();
-
-
         $posts = $category->posts()
-            ->type('post')
-            ->join('postmeta', 'posts.id', '=', 'postmeta.post_id')
             ->where('post_status', 'publish')
             ->orderBy('post_date', 'DESC')
             ->paginate(10);
-
 
         return $this->paginator( $posts, $postTransformer);
     }

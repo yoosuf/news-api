@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\v1;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response as IlluminateResponse;
+use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
 
 class ApiController extends Controller {
 
     use Helpers;
-    
-    
+
+
         /**
      * Create success response
      *

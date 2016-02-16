@@ -1,8 +1,7 @@
 <?php
 namespace App\Http\Controllers\v1;
 
-use App\Http\Controllers\ApiController;
-use App\Transformers\PostTransformer;
+use App\Transformers\v1\PostTransformer;
 use Corcel\Post;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;

@@ -13,7 +13,7 @@
 
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', ['protected' => true], function ($api) {
+$api->version('v1', function ($api) {
 
 
     $api->post('/handset/register', 'App\Http\Controllers\v1\HandsetController@registerHandset');

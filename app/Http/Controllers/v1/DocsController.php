@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\v1;
-use App\Http\Controllers\ApiController;
 
 class DocsController extends ApiController
 {

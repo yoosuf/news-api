@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\v1;
 
 use App\Models\AppUser;
-use App\Http\Controllers\ApiController;
 use App\Models\SocialProvider;
 use Illuminate\Http\Request;
 use Dingo\Api\Exception\StoreResourceFailedException;
@@ -31,7 +30,7 @@ class AuthController extends ApiController
     {
 
         $rules = [
-            'email' => 'required|email',
+            'email' => 'email',
             'first_name' => 'required',
             'last_name' => 'required',
             'provider_type' => 'required',

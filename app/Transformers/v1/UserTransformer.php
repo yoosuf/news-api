@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yoosuf
- * Date: 10/02/2016
- * Time: 17:01
- */
 
-namespace App\Transformers;
+namespace App\Transformers\v1;
 
 
 use Corcel\User;

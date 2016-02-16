@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\Http\Controllers\ApiController;
 
 use App\Models\Handset;
 use Dingo\Api\Exception\StoreResourceFailedException;
