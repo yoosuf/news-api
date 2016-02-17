@@ -6,9 +6,19 @@ use Corcel\Post;
 use Illuminate\Database\Eloquent\Collection;
 use League\Fractal\TransformerAbstract;
 
+use App\Utils\ContentCreator;
+
 class PostTransformer extends TransformerAbstract
 {
 
+    protected $contentCreator;
+
+
+    public function __construct(ContentCreator $contentCreator)
+    {
+
+        $this->contentCreator = $contentCreator;
+    }
 
 
     protected $defaultIncludes = [
@@ -29,8 +39,7 @@ class PostTransformer extends TransformerAbstract
                 'id' => (int)$post->ID,
                 'title' => $post->post_title,
 
-                'description' => "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://api.liveat8.lk/css/app.css?update=today\"><div itemscope itemtype=\"http://schema.org/Periodical\"><img src='".$post->image ."'/>"."<div class=\"post\"><h1  itemprop=\"name\">".$post->post_title."</h1><ul class=\"post-meta\"><li><time datetime=\"2010-07-03\" itemprop=\"datePublished\">".$post->post_date."</time></li></ul><div itemprop=\"description\">".$post->post_content . "</div></div><footer>
-© ".date("Y")." ඊ.ඒ.පී. ගුවන් විදුලි සමාගම . සියලුම හිමිකම් ඇවිරිණි.</footer></div>",
+                'description' =>  $this->contentCreator->enhancedContent($post->image, $post->post_title, $post->post_date, $post->post_content),
                 'excerpt' => $post->post_excerpt,
                 'thumbnail' => $post->image,
                 'links' => [

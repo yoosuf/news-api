@@ -6,6 +6,7 @@ use Corcel\Post;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
 
 class PostsController extends ApiController
 {
@@ -21,6 +22,24 @@ class PostsController extends ApiController
         $this->post = $post;
 
     }
+
+    public function getToDaysPosts(PostTransformer $postTransformer) {
+
+
+
+        $posts = $this->post->type('post')
+            ->join('postmeta', 'posts.id', '=', 'postmeta.post_id')
+            ->where('post_type', 'post')
+            ->where('post_status', 'publish')
+            ->where('meta_key', 'post_views_count')
+            ->where('post_date', '>', Carbon::today())
+            ->orderBy('post_date', 'DESC')
+            ->paginate(10);
+
+        return $this->response->paginator($posts, $postTransformer);
+
+    }
+
 
     /**
      * @param PostTransformer $postTransformer

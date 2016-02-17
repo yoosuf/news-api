@@ -23,6 +23,7 @@ $api->version('v1', function ($api) {
     $api->get('/categories/{id}', 'App\Http\Controllers\v1\CategoriesController@getCategoryById');
     $api->get('/categories/{id}/posts', 'App\Http\Controllers\v1\CategoriesController@getCategoryWithPosts');
     $api->get('/posts/popular', 'App\Http\Controllers\v1\PostsController@getPopularPosts');
+    $api->get('/posts/latest', 'App\Http\Controllers\v1\PostsController@getToDaysPosts');
 
     $api->get('/posts/{id}', 'App\Http\Controllers\v1\PostsController@getPostById');
     $api->post('/posts/new', 'App\Http\Controllers\v1\PostsController@store');
