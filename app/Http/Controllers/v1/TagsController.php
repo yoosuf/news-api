@@ -6,9 +6,11 @@ namespace App\Http\Controllers\v1;
 use App\Transformers\v1\CategoryTransformer;
 use App\Transformers\v1\PostTransformer;
 use Corcel\Post;
+use Illuminate\Http\Request;
+use League\Fractal\Manager;
 use Taxonomy;
 
-class CategoriesController extends ApiController
+class TagsController extends ApiController
 {
 
     protected $taxonomy;
@@ -16,7 +18,7 @@ class CategoriesController extends ApiController
 
 
     /**
-     * CategoriesController constructor.
+     * TagsController constructor.
      * @param Taxonomy $taxonomy
      * @param Post $post
      */
@@ -31,10 +33,12 @@ class CategoriesController extends ApiController
      * @param CategoryTransformer $categoryTransformer
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getAllCategories(CategoryTransformer $categoryTransformer)
+    public function getAllTags(CategoryTransformer $categoryTransformer)
     {
-        $categories = $this->taxonomy->category()->get();
-        return $this->collection($categories, $categoryTransformer);
+
+        $tags = $this->taxonomy->whereTaxonomy('post_tag')->orderBy('count', 'DESC')->get();
+
+        return $this->collection($tags, $categoryTransformer);
     }
 
 
@@ -42,13 +46,15 @@ class CategoriesController extends ApiController
      * @param $id
      * @param CategoryTransformer $categoryTransformer
      */
-    public function getCategoryById($id, CategoryTransformer $categoryTransformer)
+    public function getTagById($id, CategoryTransformer $categoryTransformer)
     {
-        $category = $this->taxonomy->category()->with('posts')->whereTermId( $id)->first();
-        if(empty($category))
+
+        $tags = $this->taxonomy->whereTaxonomy('post_tag')->whereTermId( $id)->first();
+
+        if(empty($tags))
             return $this->response->errorNotFound();
 
-        return $this->item($category, $categoryTransformer);
+        return $this->item($tags, $categoryTransformer);
     }
 
 
@@ -57,14 +63,16 @@ class CategoriesController extends ApiController
      * @param PostTransformer $postTransformer
      * @return mixed
      */
-    public function getCategoryWithPosts($id, PostTransformer $postTransformer)
+    public function getTagWithPosts($id, PostTransformer $postTransformer)
     {
-        $category = $this->taxonomy->category()->whereTermId($id)->first();
+        $tags = $this->taxonomy->whereTaxonomy('post_tag')->whereTermId( $id)->first();
 
-        $posts = $category->posts()
+
+        $posts = $tags->posts()
             ->where('post_status', 'publish')
             ->orderBy('post_date', 'DESC')
             ->paginate(10);
+
 
         return $this->paginator( $posts, $postTransformer);
     }

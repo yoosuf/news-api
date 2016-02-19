@@ -13,19 +13,17 @@ class PostTransformer extends TransformerAbstract
 
     protected $contentCreator;
 
-
-    public function __construct(ContentCreator $contentCreator)
-    {
-
-        $this->contentCreator = $contentCreator;
-    }
-
-
     protected $defaultIncludes = [
-
-
     ];
 
+    /**
+     * PostTransformer constructor.
+     * @param ContentCreator $contentCreator
+     */
+    public function __construct(ContentCreator $contentCreator)
+    {
+        $this->contentCreator = $contentCreator;
+    }
 
     /**
      * @param Post $post
@@ -33,29 +31,21 @@ class PostTransformer extends TransformerAbstract
      */
     public function transform(Post $post)
     {
-
-
-            return [
-                'id' => (int)$post->ID,
-                'title' => $post->post_title,
-
-                'description' =>  $this->contentCreator->enhancedContent($post->image, $post->post_title, $post->post_date, $post->post_content),
-                'excerpt' => $post->post_excerpt,
-                'thumbnail' => $post->image,
-                'links' => [
-                    'rel' => 'self',
-                    'uri' => $post->guid,
-                ],
-                'post_views' => (int)$post->meta->post_views_count,
-                'comment_count' => $post->comment_count,
-                'created_at' => $post->post_date,
-                'updated_at' => $post->post_modified,
-            ];
-
-
-
-
-
+        return [
+            'id' => (int)$post->ID,
+            'title' => $post->post_title,
+            'description' => $post->post_content,
+            'thumbnail' => $post->image,
+            'article_html' =>  $this->contentCreator->enhancedContent($post->image, $post->post_title, $post->post_date, $post->post_content),
+            'links' => [
+                'rel' => 'self',
+                'uri' => $post->guid,
+            ],
+            'post_views' => (int)$post->meta->post_views_count,
+            'comment_count' => $post->comment_count,
+            'created_at' => $post->post_date,
+            'updated_at' => $post->post_modified,
+        ];
     }
 
 
@@ -63,11 +53,23 @@ class PostTransformer extends TransformerAbstract
      * @param Post $post
      * @return \League\Fractal\Resource\Collection
      */
-    public function includeUsers(Post $post)
+    public function includeCategories(Post $post)
     {
-        $users = $post->users;
+        $taxonomies = $post->taxonomies;
 
-        return $this->collection($users, new UserTransformer);
+        return $this->collection($taxonomies, new CategoryTransformer);
+    }
+
+
+    /**
+     * @param Post $post
+     * @return \League\Fractal\Resource\Collection
+     */
+    public function includeTags(Post $post)
+    {
+        $taxonomies = $post->taxonomies->term;
+
+        return $this->collection($taxonomies, new CategoryTransformer);
     }
 
 
